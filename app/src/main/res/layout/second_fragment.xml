@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3">
+
+    <TextView
+       android:id="@+id/fragment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F2"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <fragment
+        android:id="@+id/static_fragment"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:name="com.example.mysdktest.F4"
+        android:layout_below="@id/fragment_title"
+        android:layout_margin="20dp"/>
+    <FrameLayout
+        android:id="@+id/second_fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/static_fragment"
+        android:layout_below="@id/fragment_title"/>
+
+</RelativeLayout>

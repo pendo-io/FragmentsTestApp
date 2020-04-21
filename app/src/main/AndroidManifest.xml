@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mysdktest">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:name=".App"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:debuggable="true"
+        tools:ignore="HardcodedDebugMode">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="sdk.pendo.io.activities.PendoGateActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--<data android:scheme="pendo-3ebb2076"/>-->
+                <data android:scheme="pendo-58b7c0f5" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="58b7c0f5" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- pendo-test V2 -->
+        <!--<meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-test.pendo-dev.com" />
+        <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-test.pendo-dev.com" />
+        <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-test.pendo-dev.com" />
+        <meta-data android:name="insert_cname_enabled" android:value="false" />
+        <meta-data android:name="insert_debug_logging" android:value="true" />-->
+
+        <!-- pendo-test V1
+           <meta-data android:name="insert_custom_url" android:value="https://us.device.stage.insert.io" />
+           <meta-data android:name="insert_custom_socket_url" android:value="https://mobile-websocket-dot-pendo-test.appspot.com" />
+           <meta-data android:name="insert_custom_analytics_url" android:value="https://us.data.stage.insert.io" />
+           <meta-data android:name="insert_cname_enabled" android:value="false" />
+           <meta-data android:name="insert_debug_logging" android:value="true" />
+   -->
+        <!-- pendo-insert-dev
+           <meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-insert-dev.pendo-dev.com/" />
+           <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-insert-dev.pendo-dev.com" />
+           <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-insert-dev.pendo-dev.com/" />
+           <meta-data android:name="insert_cname_enabled" android:value="false" />
+           <meta-data android:name="insert_debug_logging" android:value="true" />
+   -->
+        <!-- pendo-mobile-plat
+        <meta-data
+            android:name="insert_custom_url"
+            android:value="https://mobile-device.pendo-mobile-plat.pendo-dev.com/" />
+        <meta-data
+            android:name="insert_custom_socket_url"
+            android:value="https://app.pendo-mobile-plat.pendo-dev.com" />
+        <meta-data
+            android:name="insert_custom_analytics_url"
+            android:value="https://mobile-data-dot-pendo-mobile-plat.appspot.com/" />
+        <meta-data
+            android:name="insert_cname_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="insert_debug_logging"
+            android:value="true" />
+
+            -->
+
+        <!-- pendo-test V2 -->
+       <meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-test.pendo-dev.com" />
+        <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-test.pendo-dev.com" />
+        <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-test.pendo-dev.com" />
+        <meta-data android:name="insert_cname_enabled" android:value="false" />
+        <meta-data android:name="insert_debug_logging" android:value="true" />
+
+        <!-- pendo-test V1
+           <meta-data android:name="insert_custom_url" android:value="https://us.device.stage.insert.io" />
+           <meta-data android:name="insert_custom_socket_url" android:value="https://mobile-websocket-dot-pendo-test.appspot.com" />
+           <meta-data android:name="insert_custom_analytics_url" android:value="https://us.data.stage.insert.io" />
+           <meta-data android:name="insert_cname_enabled" android:value="false" />
+           <meta-data android:name="insert_debug_logging" android:value="true" />
+   -->
+        <!-- pendo-insert-dev
+           <meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-insert-dev.pendo-dev.com/" />
+           <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-insert-dev.pendo-dev.com" />
+           <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-insert-dev.pendo-dev.com/" />
+           <meta-data android:name="insert_cname_enabled" android:value="false" />
+           <meta-data android:name="insert_debug_logging" android:value="true" />
+   -->
+        <!-- pendo-mobile-plat -->
+        <!-- <meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-mobile-plat.pendo-dev.com/" />
+         <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-mobile-plat.pendo-dev.com" />
+         <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data-dot-pendo-mobile-plat.appspot.com/" />
+         <meta-data android:name="insert_cname_enabled" android:value="false" />
+         <meta-data android:name="insert_debug_logging" android:value="true" />-->
+
+        <!-- pendo-mobile-guides
+           <meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-mobile-guides.pendo-dev.com/" />
+           <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-mobile-guides.pendo-dev.com/" />
+           <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-mobile-guides.pendo-dev.com/" />
+           <meta-data android:name="insert_cname_enabled" android:value="false" />
+           <meta-data android:name="insert_debug_logging" android:value="true" />
+   -->
+        <!-- pendo-dev-->
+        <!--<meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-dev.pendo-dev.com/" />
+        <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-dev.pendo-dev.com/" />
+        <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-dev.pendo-dev.com/" />
+        <meta-data android:name="insert_cname_enabled" android:value="false" />
+        <meta-data android:name="insert_debug_logging" android:value="true" />-->
+
+    </application>
+
+</manifest>
