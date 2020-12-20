@@ -80,13 +80,13 @@
 
             -->
 
-        <!-- pendo-test V2 -->
+        <!-- pendo-test V2
        <meta-data android:name="insert_custom_url" android:value="https://mobile-device.pendo-test.pendo-dev.com" />
         <meta-data android:name="insert_custom_socket_url" android:value="https://app.pendo-test.pendo-dev.com" />
         <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-test.pendo-dev.com" />
         <meta-data android:name="insert_cname_enabled" android:value="false" />
         <meta-data android:name="insert_debug_logging" android:value="true" />
-
+-->
         <!-- pendo-test V1
            <meta-data android:name="insert_custom_url" android:value="https://us.device.stage.insert.io" />
            <meta-data android:name="insert_custom_socket_url" android:value="https://mobile-websocket-dot-pendo-test.appspot.com" />
@@ -121,6 +121,13 @@
         <meta-data android:name="insert_custom_analytics_url" android:value="https://mobile-data.pendo-dev.pendo-dev.com/" />
         <meta-data android:name="insert_cname_enabled" android:value="false" />
         <meta-data android:name="insert_debug_logging" android:value="true" />-->
+
+        <meta-data android:name="insert_cname_enabled" android:value="false" />
+        <!--        relevant for until 2.6.1-->
+        <meta-data android:name="pnd_debug_logging" android:value="true" />
+        <!--        relevant for 2.6.1 and beyond-->
+        <!--        <meta-data android:name="pnd_debug_logging" android:value="true" />-->
+
 
     </application>
 

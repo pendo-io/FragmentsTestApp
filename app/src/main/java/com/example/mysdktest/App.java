@@ -13,18 +13,21 @@ import sdk.pendo.io.Pendo;
 public class App extends Application {
     @Override
     public void onCreate() {
-        Map userData = new HashMap();
-        userData.put("UserCountry", "Bulgaria");
-        userData.put("UserGender", "Female");
+        Pendo.PendoInitParams pendoParams = new Pendo.PendoInitParams();
+        pendoParams.setVisitorId("John Smith");
+        pendoParams.setAccountId("Acme Inc");
 
-        Map accountData = new HashMap<String, String>();
-        accountData.put("accountCountry", "Israel");
-        accountData.put("Version", "7");
+//send Visitor Level Data
+        Map<String, Object> visitorData = new HashMap<>();
+        visitorData.put("age", 27);
+        visitorData.put("country", "USA");
+        pendoParams.setUserData(visitorData);
 
-        Pendo.PendoInitParams pendoInitParams  = new Pendo.PendoInitParams();
-        pendoInitParams.setVisitorId("DavidTest58");
-        pendoInitParams.setAccountId("DavidTest58");
-        Pendo.PendoOptions options = new Pendo.PendoOptions.Builder().setEnvironmentDebugOnly("staging").build();
+//send Account Level Data
+        Map<String, Object> accountData = new HashMap<>();
+        accountData.put("Tier", 1);
+        accountData.put("Size", "Enterprise");
+        pendoParams.setAccountData(accountData);
         super.onCreate();
         // DavidApp mobile plat
       /*Pendo.initSDK(
@@ -59,27 +62,11 @@ public class App extends Application {
 //                      .setAccountId("Pendo")
       );*/
         // Roi test IraAndroid2
+        String pendoAppKey = "eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiJlN2JhYTI1NjBlMzM0NGZkYWMzNzEyNDhjZTc2YmZjNjFkYWRlNzM4Y2FiM2NmMTliNzhmN2VmOGRmZTE5ZTI3Yzc2YzQ1MDBlOTNlYmI4YzA3YWNkY2YzMGFiNjUxMWEyNTJmNGUwNGU1NWEwZTMxMmJiYTFmYWI5NGM2ZDM2YzEzODExMGIwYWVlZjExYTM4NjhiMDkzMmUwZjQ1YzY3LjNmMjVhMmFjMmE0ZmU5MjJhZDY5Yzk3YTliNWEzNGFlLmM0ZWRiY2ZiMWQ2M2Y0OWYyMjdlNzZmZjI4ZjMzNDljNWFmMWNiMjJmNmEwMzM3M2UzNThkNmNmZTFiNDg2NzQifQ.mho2Rrfk089K6HeCSOMFVc_1xyQzUPoRYUXtAbFyTFLJAaVnV_NA5XjVBBN6G9ZeC2Mtn7jGRskOLcsqG99XX3TByHdVjOc7Gv0kMOg6BCaD1zIjRha4t6e7q5KznQRZnF3_KBghC7Phu9rNseunhjzMKMTVo4Z5Algnh0JrEH8";
         Pendo.initSDK(
                 this,
-                "eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiI3NzUzYTk4NTAwMTQxYWU3OGIyODAwMTJiYzY0NmQwMmZkZjQzODQ2ZGRmMWQzNGI4ZDRiNjAwOWNkY2E5NGNkODk5ZmRmNDMwYjBkZWMwZDFhYWIxZTc2NjZhZjE1ZDE5MWMwNTI5ZmQ2M2Q3NjFkN2JjZjhmZjcxZmE4ZTJjM2I1Y2E3MjEzODY5NWU0ZWZhZjY5ZGE4YTA0NDlkMDEwLjE4M2IxZmQzYjYzZDA1ZmIzYmVhNDc3MTRkZjRkYzRkLjMxMjc1YmNjZDljMWY5YTM0NTE5ZWM3OTY4MmM1YWNlNzQyNDJkNjEzNGQ4M2M4YmQyYWUzM2ZhYTRkN2E2MTUifQ.ZCyl4lhDHNPLbjdxGF-5tA3pVv7fbJ1PKu_u4dFM6Lz_tv-DzfIM8KGF-X5mfHi_SHKk-4g-OqUeitW2P3SVVe4zq9fXt40vVNyYoLUY_GxAVJRzIaHvsA97woFIh6hKHfEWhI-OXCqSAfMtZfGnuDHrqD2NAEp_qJ2SPBT2mzM",
-                pendoInitParams.setPendoOptions(options)
-                // use this to add certificate pinning to pendo-test for the SDK that needed it
-//              .setPendoOptions(new Pendo.PendoOptions.Builder()
-//                     .addPinDebugOnly("us.device.stage.insert.io","sha256/X2g/8O8al2M2CyehYrCEdwsuBOn4N6uhgPiJtl2xzt8=")
-//                      .addPinDebugOnly("us.data.stage.insert.io","sha256/Y/0RvYyhSUIvKhShNHA1jd9lLTJeZLPjyYb4d4fx7Xc=")
-//                      .addPinDebugOnly("ws.stage.insert.io","sha256/qX5cmooI2z5W4ij8QJxiaNy3nt0N3nqRohiyqx9M1og=")
-//                     .build())
-//                      .setUserData(userAttributes)
-//                      .setAccountData(userAttributes)
-//                      .setVisitorId("222")
-//                      .setAccountId("Pendo")
-        );
-//        Pendo.switchVisitor("Visitor1", "Yo", userData, accountData);
-//        Pendo.setAccountData(accountData);
-//        Pendo.setUserData(userData);
-//        Pendo.clearVisitor();
-
-
+                pendoAppKey,
+                null);
     }
 
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.mysdktest"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -22,13 +22,21 @@ android {
             minifyEnabled false
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 repositories {
     maven {
         url "https://software.mobile.pendo.io/artifactory/android-sdk-externals"
     }
     maven {
-        url "https://software.mobile.pendo.io/artifactory/android-staging"
+        url "https://software.mobile.pendo.io/artifactory/android-sdk-pendo-ci-release"
+        credentials {
+            username 'mobile-reader'
+            password 'eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJ5UUxQNjQ1UWkzemNwUy1QSTV5M3UyVHBsTmo0YVJmdV9MMUcwMHp0MlRRIn0.eyJzdWIiOiJqZnJ0QDAxZW50cHN5czZhZWJxMWt0anBkZWsxejljXC91c2Vyc1wvbW9iaWxlLXJlYWRlciIsInNjcCI6Im1lbWJlci1vZi1ncm91cHM6cmVhZGVycyBhcGk6KiIsImF1ZCI6ImpmcnRAMDFlbnRwc3lzNmFlYnExa3RqcGRlazF6OWMiLCJpc3MiOiJqZnJ0QDAxZW50cHN5czZhZWJxMWt0anBkZWsxejljXC91c2Vyc1wvbGlyYW5AcGVuZG8uaW8iLCJpYXQiOjE2MDYzMDAwNDcsImp0aSI6ImFmNDNkN2Q5LWNmZjMtNDFmNS05ZmVlLTRkMjA3M2FmNWViYSJ9.dct_1somtsTL7iKNyj3pDHzeByXqxyJ3KCghDiTGlxDqR9Gx_QKWX8ZqFtQAb83o6oIB3Jslva7enE5Okw4IquXl1-xTYCl-s_T1VGaYDK4TgAlab2TQ9T3pxle0sE5TJW5by9IffXx1nKhLCvtJR8tfcAgzAV_jNJNRcxSzJsc31Bo6wzbZE1ojEua_CoZ5yqC0Sk6TS8oaqxRFLixROZwmLog3hcpw5wra4NEQy1I5NEb_vRDTx2RPvmPqpxc639RRc9b9LadV6oXuYRvC72k2pxRWBLgcAv6KGH9y9sYw8D7kUo8aMfoWAQUUWka-AXx0-s0R5NI2HUN9_avUIg'
+        }
     }
     mavenCentral()
 }
@@ -42,5 +50,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation group:'sdk.pendo.io' , name:'pendoIO', version:'2.3.7.1660', changing:true
+    implementation group:'sdk.pendo.io' , name:'pendoIO', version:'2.6.2.1244', changing:true
 }
